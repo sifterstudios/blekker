@@ -3,5 +3,33 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "authSignupHeader": "Sign up.",
+    "@authSignupHeader": {
+        "description": "Text for header in signup page"
+    },
+    "authName": "Name",
+    "@authName": {
+        "description": "Text hint for signup page"
+    },
+    "authEmail": "Email",
+    "@authEmail": {
+        "description": "Text hint for signup page"
+    },
+    "authPassword": "Password",
+    "@authPassword": {
+        "description": "Text hint for signup page"
+    },
+    "authSignupButton": "SIGN UP",
+    "@authSignupButton": {
+        "description": "Text for signup button"
+    },
+    "authExistingUserPromptStart": "Already have an account? ",
+    "@authExistingUserPromptStart": {
+        "description": "Text for footer in signup page, without styling"
+    },
+    "authExistingUserPromptEnd": "Log in",
+    "@authExistingUserPromptEnd": {
+        "description": "Text for footer in signup page, with styling"
     }
 }

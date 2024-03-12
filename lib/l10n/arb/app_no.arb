@@ -1,0 +1,7 @@
+{
+    "@@locale": "no",
+    "counterAppBarTitle": "Teller",
+    "@counterAppBarTitle": {
+        "description": "Tekstvisning i Appbar i Teller-siden"
+    }
+}
