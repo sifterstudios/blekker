@@ -1,9 +1,9 @@
 import 'package:blekker/app/theme/custom_theme/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlekkerTextTheme {
   BlekkerTextTheme._();
-
   static TextTheme textTheme = TextTheme(
     displayLarge: const TextStyle().copyWith(
       fontSize: 57,
@@ -79,6 +79,44 @@ class BlekkerTextTheme {
       fontSize: 12,
       fontWeight: FontWeight.bold,
       color: BlekkerColors.bodySmallColor,
+    ),
+  );
+  static CupertinoTextThemeData cupertinoTextTheme =
+  const CupertinoTextThemeData(
+    textStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.labelSmallColor,
+    ),
+    actionTextStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.labelSmallColor,
+    ),
+    tabLabelTextStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.labelSmallColor,
+    ),
+    navTitleTextStyle: TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.titleLargeColor,
+    ),
+    navLargeTitleTextStyle: TextStyle(
+      fontSize: 28,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.headlineMediumColor,
+    ),
+    pickerTextStyle: TextStyle(
+      fontSize: 32,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.mainTextColor,
+    ),
+    dateTimePickerTextStyle: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: BlekkerColors.bodyLargeColor,
     ),
   );
 }

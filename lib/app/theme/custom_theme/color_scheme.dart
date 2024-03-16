@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class BlekkerColorScheme {
   BlekkerColorScheme._();
 
-  static ColorScheme darkColorScheme = ColorScheme(
+  static ColorScheme darkColorScheme = const ColorScheme(
     brightness: Brightness.dark,
     primary: BlekkerColors.primaryColor,
     onPrimary: BlekkerColors.primaryContrastColor,
@@ -12,7 +12,7 @@ class BlekkerColorScheme {
     onSecondary: BlekkerColors.secondaryContrastColor,
     error: Colors.purpleAccent,
     onError: Colors.black,
-    background: BlekkerColors.primaryContrastColor,
+    background: BlekkerColors.backgroundColor,
     onBackground: BlekkerColors.mainTextColor,
     surface: BlekkerColors.secondaryColor,
     onSurface: BlekkerColors.secondaryContrastColor,

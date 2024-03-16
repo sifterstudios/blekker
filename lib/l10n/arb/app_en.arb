@@ -31,5 +31,25 @@
     "authExistingUserPromptEnd": "Log in",
     "@authExistingUserPromptEnd": {
         "description": "Text for footer in signup page, with styling"
+    },
+    "authFormError": "$hintText is missing!",
+    "@authFormError": {
+        "description": "Text for error on form input, if fields are empty"
+    },
+    "authLoginHeader": "Log in.",
+    "@authLoginHeader": {
+        "description": "Header text for login page"
+    },
+    "authNewUserPromptStart": "Don't have an account? ",
+    "@authNewUserPromptStart": {
+        "description": "Text for footer in login page, without styling"
+    },
+    "authNewUserPromptEnd": "Sign up",
+    "@authNewUserPromptEnd": {
+        "description": "Text for footer in login page, with styling"
+    },
+    "authLoginButton": "LOG IN",
+    "@authLoginButton": {
+        "description": "Text for login button in login page"
     }
 }

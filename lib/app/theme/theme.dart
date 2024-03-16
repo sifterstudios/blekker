@@ -7,6 +7,7 @@ import 'package:blekker/app/theme/custom_theme/elevated_button_theme.dart';
 import 'package:blekker/app/theme/custom_theme/floating_action_button_theme.dart';
 import 'package:blekker/app/theme/custom_theme/input_decoration_theme.dart';
 import 'package:blekker/app/theme/custom_theme/text_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlekkerAppTheme{
@@ -26,5 +27,24 @@ class BlekkerAppTheme{
     floatingActionButtonTheme: BlekkerFabTheme.fabTheme,
     buttonTheme: BlekkerButtonTheme.buttonTheme,
     elevatedButtonTheme: BlekkerElevatedButtonTheme.theme,
+    cupertinoOverrideTheme: NoDefaultCupertinoThemeData(
+      brightness: Brightness.dark,
+      textTheme: BlekkerTextTheme.cupertinoTextTheme,
+      scaffoldBackgroundColor: BlekkerColors.backgroundColor,
+      primaryColor: BlekkerColors.primaryColor,
+      applyThemeToAll: true,
+      barBackgroundColor: BlekkerColors.backgroundColor,
+      primaryContrastingColor: BlekkerColors.primaryContrastColor,
+    ),
+  );
+
+  static CupertinoThemeData iosDarkTheme = CupertinoThemeData(
+   primaryContrastingColor: BlekkerColors.primaryContrastColor,
+   barBackgroundColor: BlekkerColors.backgroundColor,
+   applyThemeToAll: true,
+   primaryColor: BlekkerColors.primaryColor,
+   scaffoldBackgroundColor: BlekkerColors.scaffoldBackgroundColor,
+   textTheme: BlekkerTextTheme.cupertinoTextTheme,
+   brightness: Brightness.dark,
   );
 }

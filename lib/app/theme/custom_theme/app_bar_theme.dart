@@ -5,11 +5,7 @@ class BlekkerAppBarTheme {
   BlekkerAppBarTheme._();
 
   static AppBarTheme appBarTheme = const AppBarTheme().copyWith(
-    backgroundColor: BlekkerColors.primaryContrastColor,
+    backgroundColor: BlekkerColors.backgroundColor,
     centerTitle: false,
-    shape: const LinearBorder(
-      bottom: LinearBorderEdge(
-      ),
-    ),
   );
 }
