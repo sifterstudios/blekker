@@ -1,6 +1,5 @@
 import 'package:blekker/app/theme/custom_theme/color_scheme.dart';
 import 'package:blekker/app/theme/custom_theme/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlekkerButtonTheme {

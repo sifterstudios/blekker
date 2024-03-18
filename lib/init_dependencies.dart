@@ -13,8 +13,8 @@ Future<void> initDependencies() async {
   _initAuth();
   final appwriteClient = Client();
   appwriteClient
-      .setEndpoint(Env.appwriteEndpoint)
-      .setProject(Env.appwriteProjectId);
+      .setEndpoint(Env.APPWRITE_ENDPOINT)
+      .setProject(Env.APPWRITE_PROJECT_ID);
 
   serviceLocator.registerLazySingleton(() => appwriteClient);
 }
