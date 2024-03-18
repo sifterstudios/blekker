@@ -1,7 +1,9 @@
+import 'package:blekker/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_button.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_field.dart';
 import 'package:blekker/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,6 +30,7 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
+    context.read<AuthBloc>().add(const AuthEvent.started());
     final l10n = context.l10n;
     return PlatformScaffold(
       appBar: PlatformAppBar(),
@@ -67,7 +70,20 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(
                 height: 15,
               ),
-              AuthButton(buttonText: l10n.authSignupButton),
+              AuthButton(
+                buttonText: l10n.authSignupButton,
+                onPressed: () async {
+                  if (formKey.currentState!.validate()) {
+                    context.read<AuthBloc>().add(
+                          AuthEvent.signup(
+                            nameController.text.trim(),
+                            emailController.text.trim(),
+                            passwordController.text,
+                          ),
+                        );
+                  }
+                },
+              ),
               const SizedBox(
                 height: 15,
               ),

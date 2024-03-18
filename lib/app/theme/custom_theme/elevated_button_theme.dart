@@ -35,7 +35,7 @@ class BlekkerElevatedButtonTheme {
     ),
   );
   static CupertinoElevatedButtonData iosElevatedButtonTheme =
-  CupertinoElevatedButtonData(
+      CupertinoElevatedButtonData(
     color: BlekkerColors.primaryColor,
     disabledColor: BlekkerColors.labelSmallColor,
   );

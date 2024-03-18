@@ -10,7 +10,7 @@ import 'package:blekker/app/theme/custom_theme/text_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BlekkerAppTheme{
+class BlekkerAppTheme {
   BlekkerAppTheme._();
 
   static ThemeData lightTheme = ThemeData();
@@ -19,7 +19,7 @@ class BlekkerAppTheme{
     brightness: Brightness.dark,
     primaryColor: BlekkerColors.primaryColor,
     scaffoldBackgroundColor: BlekkerColors.primaryContrastColor,
-    textTheme:  BlekkerTextTheme.textTheme,
+    textTheme: BlekkerTextTheme.textTheme,
     actionIconTheme: BlekkerActionIconTheme.actionIconThemeData,
     appBarTheme: BlekkerAppBarTheme.appBarTheme,
     colorScheme: BlekkerColorScheme.darkColorScheme,
@@ -39,12 +39,12 @@ class BlekkerAppTheme{
   );
 
   static CupertinoThemeData iosDarkTheme = CupertinoThemeData(
-   primaryContrastingColor: BlekkerColors.primaryContrastColor,
-   barBackgroundColor: BlekkerColors.backgroundColor,
-   applyThemeToAll: true,
-   primaryColor: BlekkerColors.primaryColor,
-   scaffoldBackgroundColor: BlekkerColors.scaffoldBackgroundColor,
-   textTheme: BlekkerTextTheme.cupertinoTextTheme,
-   brightness: Brightness.dark,
+    primaryContrastingColor: BlekkerColors.primaryContrastColor,
+    barBackgroundColor: BlekkerColors.backgroundColor,
+    applyThemeToAll: true,
+    primaryColor: BlekkerColors.primaryColor,
+    scaffoldBackgroundColor: BlekkerColors.scaffoldBackgroundColor,
+    textTheme: BlekkerTextTheme.cupertinoTextTheme,
+    brightness: Brightness.dark,
   );
 }

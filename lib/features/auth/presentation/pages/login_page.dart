@@ -71,7 +71,10 @@ class _SignupPageState extends State<LoginPage> {
               const SizedBox(
                 height: 15,
               ),
-              AuthButton(buttonText: l10n.authLoginButton),
+              AuthButton(
+                buttonText: l10n.authLoginButton,
+                onPressed: () {},
+              ),
               const SizedBox(
                 height: 15,
               ),

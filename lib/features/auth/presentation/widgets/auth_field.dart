@@ -20,6 +20,7 @@ class AuthField extends StatelessWidget {
     return PlatformTextFormField(
       cupertino: (context, platform) => CupertinoTextFormFieldData(),
       hintText: hintText,
+      controller: controller,
       validator: (value) {
         if (value!.isEmpty) {
           return l10n.authFormError;

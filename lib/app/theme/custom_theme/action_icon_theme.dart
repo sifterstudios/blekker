@@ -5,7 +5,7 @@ class BlekkerActionIconTheme {
   BlekkerActionIconTheme._();
 
   static ActionIconThemeData actionIconThemeData =
-  const ActionIconThemeData().copyWith(
+      const ActionIconThemeData().copyWith(
     backButtonIconBuilder: (_) => const Icon(
       Icons.arrow_back_sharp,
       color: BlekkerColors.primaryColor,

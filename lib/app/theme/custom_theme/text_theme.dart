@@ -82,7 +82,7 @@ class BlekkerTextTheme {
     ),
   );
   static CupertinoTextThemeData cupertinoTextTheme =
-  const CupertinoTextThemeData(
+      const CupertinoTextThemeData(
     textStyle: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,

@@ -5,7 +5,7 @@ class BlekkerFabTheme {
   BlekkerFabTheme._();
 
   static const FloatingActionButtonThemeData fabTheme =
-  FloatingActionButtonThemeData(
+      FloatingActionButtonThemeData(
     backgroundColor: BlekkerColors.primaryColor,
     foregroundColor: BlekkerColors.primaryContrastColor,
     shape: Border.symmetric(),

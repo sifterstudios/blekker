@@ -4,15 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton({required this.buttonText, super.key});
+  const AuthButton({
+    required this.buttonText,
+    required this.onPressed,
+    super.key,
+  });
+
   final String buttonText;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return PlatformElevatedButton(
+      onPressed: onPressed,
       color: BlekkerColors.primaryColor,
-      cupertino: (context, platform)
-      => BlekkerElevatedButtonTheme.iosElevatedButtonTheme,
+      cupertino: (context, platform) =>
+          BlekkerElevatedButtonTheme.iosElevatedButtonTheme,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
