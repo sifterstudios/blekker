@@ -1,9 +1,9 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class BlekkerColorScheme {
-  BlekkerColorScheme._();
-
   static ColorScheme darkColorScheme = const ColorScheme(
     brightness: Brightness.dark,
     primary: BlekkerColors.primaryColor,

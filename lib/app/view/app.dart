@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/routes/go_routes.dart';
 import 'package:blekker/app/theme/theme.dart';
 import 'package:blekker/features/auth/presentation/bloc/auth_bloc.dart';
@@ -39,7 +41,7 @@ class App extends StatelessWidget {
             title: 'Blekker',
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            routerConfig: BlekkerRoutes.router,
+            routerConfig: router(),
           ),
         ),
       ),

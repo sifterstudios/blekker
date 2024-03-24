@@ -1,7 +1,8 @@
+// Copyright 2024 Sifterstudios
+
 import 'dart:ui';
 
 class BlekkerColors {
-  BlekkerColors._();
   static const Color primaryColor = Color(0xFF57EEDD);
   static const Color primaryContrastColor = Color(0xFF0B201F);
   static const Color backgroundColor = Color(0xFF1A1D2F);

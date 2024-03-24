@@ -1,9 +1,10 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlekkerTextTheme {
-  BlekkerTextTheme._();
   static TextTheme textTheme = TextTheme(
     displayLarge: const TextStyle().copyWith(
       fontSize: 57,

@@ -1,26 +1,43 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
 import 'package:flutter/material.dart';
 
+@immutable
 class BlekkerActionIconTheme {
-  BlekkerActionIconTheme._();
-
   static ActionIconThemeData actionIconThemeData =
       const ActionIconThemeData().copyWith(
-    backButtonIconBuilder: (_) => const Icon(
+    backButtonIconBuilder: backButton,
+    closeButtonIconBuilder: closeButton,
+    drawerButtonIconBuilder: drawerButton,
+    endDrawerButtonIconBuilder: endDrawerButton,
+  );
+
+  static Widget backButton(BuildContext context) {
+    return const Icon(
       Icons.arrow_back_sharp,
       color: BlekkerColors.primaryColor,
-    ),
-    closeButtonIconBuilder: (_) => const Icon(
+    );
+  }
+
+  static Widget closeButton(BuildContext context) {
+    return const Icon(
       Icons.close_sharp,
       color: BlekkerColors.primaryColor,
-    ),
-    drawerButtonIconBuilder: (_) => const Icon(
+    );
+  }
+
+  static Widget drawerButton(BuildContext context) {
+    return const Icon(
       Icons.menu_sharp,
       color: BlekkerColors.primaryColor,
-    ),
-    endDrawerButtonIconBuilder: (_) => const Icon(
+    );
+  }
+
+  static Widget endDrawerButton(BuildContext context) {
+    return const Icon(
       Icons.exit_to_app_sharp,
       color: BlekkerColors.primaryColor,
-    ),
-  );
+    );
+  }
 }

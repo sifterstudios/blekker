@@ -1,5 +1,6 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
-import 'package:blekker/app/theme/custom_theme/elevated_button_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -18,8 +19,6 @@ class AuthButton extends StatelessWidget {
     return PlatformElevatedButton(
       onPressed: onPressed,
       color: BlekkerColors.primaryColor,
-      cupertino: (context, platform) =>
-          BlekkerElevatedButtonTheme.iosElevatedButtonTheme,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

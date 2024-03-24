@@ -1,10 +1,9 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class BlekkerElevatedButtonTheme {
-  BlekkerElevatedButtonTheme._();
-
   static ElevatedButtonThemeData theme = ElevatedButtonThemeData(
     style: ButtonStyle(
       padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
@@ -33,10 +32,5 @@ class BlekkerElevatedButtonTheme {
         );
       }),
     ),
-  );
-  static CupertinoElevatedButtonData iosElevatedButtonTheme =
-      CupertinoElevatedButtonData(
-    color: BlekkerColors.primaryColor,
-    disabledColor: BlekkerColors.labelSmallColor,
   );
 }
