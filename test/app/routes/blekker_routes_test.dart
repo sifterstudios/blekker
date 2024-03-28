@@ -5,7 +5,7 @@ import 'package:blekker/features/auth/presentation/pages/login_page.dart';
 import 'package:blekker/features/auth/presentation/pages/signup_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../helpers/pump_route.dart';
+import '../../helpers/pump_real_router_app.dart';
 
 void main() {
   group('GoRouter', () {

@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/theme/custom_theme/colors.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_button.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_field.dart';
@@ -34,13 +36,6 @@ class _SignupPageState extends State<LoginPage> {
           backgroundColor: BlekkerColors.primaryContrastColor,
           centerTitle: false,
         ),
-        cupertino: (_, __) => CupertinoNavigationBarData(
-          backgroundColor: BlekkerColors.primaryContrastColor,
-          brightness: Brightness.dark,
-          border: const Border(
-            bottom: BorderSide(color: BlekkerColors.primaryColor, width: 0.5),
-          ),
-        ),
       ),
       body: Form(
         key: formKey,
@@ -73,7 +68,9 @@ class _SignupPageState extends State<LoginPage> {
               ),
               AuthButton(
                 buttonText: l10n.authLoginButton,
-                onPressed: () {},
+                onPressed: () {
+                  throw UnimplementedError();
+                },
               ),
               const SizedBox(
                 height: 15,

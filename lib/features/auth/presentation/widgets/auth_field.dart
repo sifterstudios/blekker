@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -18,7 +20,6 @@ class AuthField extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return PlatformTextFormField(
-      cupertino: (context, platform) => CupertinoTextFormFieldData(),
       hintText: hintText,
       controller: controller,
       validator: (value) {

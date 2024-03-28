@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:appwrite/appwrite.dart';
 import 'package:blekker/app/env/env.dart';
 import 'package:blekker/features/auth/data/datasources/auth_remote_data_source.dart';
@@ -6,6 +8,7 @@ import 'package:blekker/features/auth/domain/repository/auth_repository.dart';
 import 'package:blekker/features/auth/domain/usecases/user_sign_up.dart';
 import 'package:blekker/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 
 final serviceLocator = GetIt.instance;
 
@@ -16,7 +19,9 @@ Future<void> initDependencies() async {
       .setEndpoint(Env.APPWRITE_ENDPOINT)
       .setProject(Env.APPWRITE_PROJECT_ID);
 
-  serviceLocator.registerLazySingleton(() => appwriteClient);
+  serviceLocator
+    ..registerLazySingleton(() => appwriteClient)
+    ..registerLazySingleton<Logger>(serviceLocator.call);
 }
 
 void _initAuth() {

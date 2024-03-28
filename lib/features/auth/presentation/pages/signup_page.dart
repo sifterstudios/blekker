@@ -1,3 +1,6 @@
+// Copyright 2024 Sifterstudios
+
+import 'package:blekker/app/routes/go_routes.dart';
 import 'package:blekker/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_button.dart';
 import 'package:blekker/features/auth/presentation/widgets/auth_field.dart';
@@ -89,7 +92,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  context.push('/login');
+                  context.push(Routes.login);
                 },
                 child: RichText(
                   text: TextSpan(
