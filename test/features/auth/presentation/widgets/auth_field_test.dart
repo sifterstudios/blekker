@@ -33,8 +33,6 @@ void main() {
 
       final authField = find.byType(AuthField);
       expect(authField, findsOneWidget);
-      final form = tester.widget<Form>(find.byType(Form));
-      // validate the form
 
       await tester.enterText(authField, '');
       await tester.pumpAndSettle(const Duration(seconds: 1));

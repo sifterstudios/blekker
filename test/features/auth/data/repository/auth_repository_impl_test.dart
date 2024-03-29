@@ -15,7 +15,6 @@ import 'auth_repository_impl_test.mocks.dart';
 void main() {
   final authRemoteDataSource = MockAuthRemoteDataSource();
   final authRepository = AuthRepositoryImpl(authRemoteDataSource);
-  final signupFailureDummy = Either<Failure, String>.left(Failure('LEFT'));
   final signupDummy = Either<Failure, String>.right('success');
   group('AuthRepositoryImpl', () {
     test('should throw unimplemented error when trying to log in', () async {
