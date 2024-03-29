@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:appwrite/appwrite.dart';
 import 'package:blekker/app/error/exceptions.dart';
 
@@ -34,12 +36,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String name,
     required String email,
     required String password,
+    String? userId,
+    Account? account,
   }) async {
     try {
-      final account = Account(client);
+      final localAccount = account ?? Account(client);
 
-      final userResponse = await account.create(
-        userId: ID.unique(),
+      final userResponse = await localAccount.create(
+        userId: userId ?? ID.unique(),
         email: email,
         password: password,
         name: name,
