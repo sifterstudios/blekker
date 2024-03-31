@@ -1,5 +1,6 @@
 // Copyright 2024 Sifterstudios
 
+import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:blekker/features/auth/domain/usecases/user_sign_up.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

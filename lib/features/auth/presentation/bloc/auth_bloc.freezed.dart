@@ -1,3 +1,5 @@
+// Copyright 2024 Sifterstudios
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -338,7 +340,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String uid) success,
+    required TResult Function(UserEntity uid) success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -346,7 +348,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String uid)? success,
+    TResult? Function(UserEntity uid)? success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -354,7 +356,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String uid)? success,
+    TResult Function(UserEntity uid)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -443,7 +445,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String uid) success,
+    required TResult Function(UserEntity uid) success,
     required TResult Function(String message) failure,
   }) {
     return initial();
@@ -454,7 +456,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String uid)? success,
+    TResult? Function(UserEntity uid)? success,
     TResult? Function(String message)? failure,
   }) {
     return initial?.call();
@@ -465,7 +467,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String uid)? success,
+    TResult Function(UserEntity uid)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -557,7 +559,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String uid) success,
+    required TResult Function(UserEntity uid) success,
     required TResult Function(String message) failure,
   }) {
     return loading();
@@ -568,7 +570,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String uid)? success,
+    TResult? Function(UserEntity uid)? success,
     TResult? Function(String message)? failure,
   }) {
     return loading?.call();
@@ -579,7 +581,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String uid)? success,
+    TResult Function(UserEntity uid)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -637,7 +639,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String uid});
+  $Res call({UserEntity uid});
 }
 
 /// @nodoc
@@ -657,7 +659,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as UserEntity,
     ));
   }
 }
@@ -668,7 +670,7 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.uid);
 
   @override
-  final String uid;
+  final UserEntity uid;
 
   @override
   String toString() {
@@ -697,7 +699,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String uid) success,
+    required TResult Function(UserEntity uid) success,
     required TResult Function(String message) failure,
   }) {
     return success(uid);
@@ -708,7 +710,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String uid)? success,
+    TResult? Function(UserEntity uid)? success,
     TResult? Function(String message)? failure,
   }) {
     return success?.call(uid);
@@ -719,7 +721,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String uid)? success,
+    TResult Function(UserEntity uid)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -768,9 +770,9 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements AuthState {
-  const factory _Success(final String uid) = _$SuccessImpl;
+  const factory _Success(final UserEntity uid) = _$SuccessImpl;
 
-  String get uid;
+  UserEntity get uid;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -842,7 +844,7 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String uid) success,
+    required TResult Function(UserEntity uid) success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -853,7 +855,7 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String uid)? success,
+    TResult? Function(UserEntity uid)? success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -864,7 +866,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String uid)? success,
+    TResult Function(UserEntity uid)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {

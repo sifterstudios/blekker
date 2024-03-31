@@ -1,6 +1,7 @@
 // Copyright 2024 Sifterstudios
 
 import 'package:blekker/app/error/failures.dart';
+import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:blekker/features/auth/domain/usecases/user_sign_up.dart';
 import 'package:blekker/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
@@ -14,13 +15,15 @@ import 'auth_bloc_test.mocks.dart';
 @GenerateNiceMocks(
   [
     MockSpec<UserSignup>(as: #MockUserSignup),
+    MockSpec<UserEntity>(as: #MockUserEntity),
   ],
 )
 void main() {
   final mockUserSignup = MockUserSignup();
-  final successDummy = Either<Failure, String>.right('success');
+  final mockUserEntity = MockUserEntity();
+  final successDummy = Either<Failure, UserEntity>.right(mockUserEntity);
   final failureDummy =
-      Either<Failure, String>.left(Failure('Please fill in all fields'));
+      Either<Failure, UserEntity>.left(Failure('Please fill in all fields'));
   final userSignupParams = UserSignupParams(
     name: 'name',
     email: 'email',
@@ -37,7 +40,7 @@ void main() {
             userSignupParams,
           ),
         ).thenAnswer((_) async {
-          return const Right('success');
+          return Right(mockUserEntity);
         });
         return AuthBloc(userSignup: mockUserSignup);
       },
@@ -49,7 +52,7 @@ void main() {
       expect: () async => <AuthState>[
         const AuthState.initial(),
         const AuthState.loading(),
-        const AuthState.success('success'),
+        AuthState.success(mockUserEntity),
       ],
     );
     blocTest<AuthBloc, AuthState>(

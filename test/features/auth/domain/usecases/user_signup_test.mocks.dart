@@ -5,14 +5,18 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
+import 'dart:async' as _i5;
 
-import 'package:blekker/app/error/failures.dart' as _i5;
+import 'package:appwrite/models.dart' as _i2;
+import 'package:blekker/app/error/failures.dart' as _i7;
+import 'package:blekker/features/auth/domain/entities/session_entity.dart'
+    as _i9;
+import 'package:blekker/features/auth/domain/entities/user_entity.dart' as _i3;
 import 'package:blekker/features/auth/domain/repository/auth_repository.dart'
-    as _i2;
-import 'package:fpdart/fpdart.dart' as _i4;
+    as _i4;
+import 'package:fpdart/fpdart.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i6;
+import 'package:mockito/src/dummies.dart' as _i8;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -27,93 +31,393 @@ import 'package:mockito/src/dummies.dart' as _i6;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeDateTime_0 extends _i1.SmartFake implements DateTime {
+  _FakeDateTime_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeUser_1 extends _i1.SmartFake implements _i2.User {
+  _FakeUser_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeUserEntity_2 extends _i1.SmartFake implements _i3.UserEntity {
+  _FakeUserEntity_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [AuthRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAuthRepository extends _i1.Mock implements _i2.AuthRepository {
+class MockAuthRepository extends _i1.Mock implements _i4.AuthRepository {
   @override
-  _i3.Future<_i4.Either<_i5.Failure, String>> signupWithEmailAndPassword({
+  _i5.Future<_i6.Either<_i7.Failure, _i3.UserEntity>>
+      signupWithEmailAndPassword({
     required String? name,
     required String? email,
     required String? password,
   }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #signupWithEmailAndPassword,
-          [],
-          {
-            #name: name,
-            #email: email,
-            #password: password,
-          },
-        ),
-        returnValue: _i3.Future<_i4.Either<_i5.Failure, String>>.value(
-            _i6.dummyValue<_i4.Either<_i5.Failure, String>>(
-          this,
-          Invocation.method(
-            #signupWithEmailAndPassword,
-            [],
-            {
-              #name: name,
-              #email: email,
-              #password: password,
-            },
-          ),
-        )),
-        returnValueForMissingStub:
-            _i3.Future<_i4.Either<_i5.Failure, String>>.value(
-                _i6.dummyValue<_i4.Either<_i5.Failure, String>>(
-          this,
-          Invocation.method(
-            #signupWithEmailAndPassword,
-            [],
-            {
-              #name: name,
-              #email: email,
-              #password: password,
-            },
-          ),
-        )),
-      ) as _i3.Future<_i4.Either<_i5.Failure, String>>);
+          (super.noSuchMethod(
+            Invocation.method(
+              #signupWithEmailAndPassword,
+              [],
+              {
+                #name: name,
+                #email: email,
+                #password: password,
+              },
+            ),
+            returnValue:
+                _i5.Future<_i6.Either<_i7.Failure, _i3.UserEntity>>.value(
+                    _i8.dummyValue<_i6.Either<_i7.Failure, _i3.UserEntity>>(
+              this,
+              Invocation.method(
+                #signupWithEmailAndPassword,
+                [],
+                {
+                  #name: name,
+                  #email: email,
+                  #password: password,
+                },
+              ),
+            )),
+            returnValueForMissingStub:
+                _i5.Future<_i6.Either<_i7.Failure, _i3.UserEntity>>.value(
+                    _i8.dummyValue<_i6.Either<_i7.Failure, _i3.UserEntity>>(
+              this,
+              Invocation.method(
+                #signupWithEmailAndPassword,
+                [],
+                {
+                  #name: name,
+                  #email: email,
+                  #password: password,
+                },
+              ),
+            )),
+          ) as _i5.Future<_i6.Either<_i7.Failure, _i3.UserEntity>>);
 
   @override
-  _i3.Future<_i4.Either<_i5.Failure, String>> loginWithEmailAndPassword({
+  _i5.Future<_i6.Either<_i7.Failure, _i9.SessionEntity>>
+      loginWithEmailAndPassword({
     required String? email,
     required String? password,
   }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #loginWithEmailAndPassword,
+              [],
+              {
+                #email: email,
+                #password: password,
+              },
+            ),
+            returnValue:
+                _i5.Future<_i6.Either<_i7.Failure, _i9.SessionEntity>>.value(
+                    _i8.dummyValue<_i6.Either<_i7.Failure, _i9.SessionEntity>>(
+              this,
+              Invocation.method(
+                #loginWithEmailAndPassword,
+                [],
+                {
+                  #email: email,
+                  #password: password,
+                },
+              ),
+            )),
+            returnValueForMissingStub:
+                _i5.Future<_i6.Either<_i7.Failure, _i9.SessionEntity>>.value(
+                    _i8.dummyValue<_i6.Either<_i7.Failure, _i9.SessionEntity>>(
+              this,
+              Invocation.method(
+                #loginWithEmailAndPassword,
+                [],
+                {
+                  #email: email,
+                  #password: password,
+                },
+              ),
+            )),
+          ) as _i5.Future<_i6.Either<_i7.Failure, _i9.SessionEntity>>);
+}
+
+/// A class which mocks [UserEntity].
+///
+/// See the documentation for Mockito's code generation for more information.
+// ignore: must_be_immutable
+class MockUserEntity extends _i1.Mock implements _i3.UserEntity {
+  @override
+  String get uid => (super.noSuchMethod(
+        Invocation.getter(#uid),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#uid),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#uid),
+        ),
+      ) as String);
+
+  @override
+  DateTime get createdAt => (super.noSuchMethod(
+        Invocation.getter(#createdAt),
+        returnValue: _FakeDateTime_0(
+          this,
+          Invocation.getter(#createdAt),
+        ),
+        returnValueForMissingStub: _FakeDateTime_0(
+          this,
+          Invocation.getter(#createdAt),
+        ),
+      ) as DateTime);
+
+  @override
+  DateTime get updatedAt => (super.noSuchMethod(
+        Invocation.getter(#updatedAt),
+        returnValue: _FakeDateTime_0(
+          this,
+          Invocation.getter(#updatedAt),
+        ),
+        returnValueForMissingStub: _FakeDateTime_0(
+          this,
+          Invocation.getter(#updatedAt),
+        ),
+      ) as DateTime);
+
+  @override
+  String get username => (super.noSuchMethod(
+        Invocation.getter(#username),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#username),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#username),
+        ),
+      ) as String);
+
+  @override
+  DateTime get registration => (super.noSuchMethod(
+        Invocation.getter(#registration),
+        returnValue: _FakeDateTime_0(
+          this,
+          Invocation.getter(#registration),
+        ),
+        returnValueForMissingStub: _FakeDateTime_0(
+          this,
+          Invocation.getter(#registration),
+        ),
+      ) as DateTime);
+
+  @override
+  bool get activeStatus => (super.noSuchMethod(
+        Invocation.getter(#activeStatus),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  List<String> get labels => (super.noSuchMethod(
+        Invocation.getter(#labels),
+        returnValue: <String>[],
+        returnValueForMissingStub: <String>[],
+      ) as List<String>);
+
+  @override
+  DateTime get passwordUpdate => (super.noSuchMethod(
+        Invocation.getter(#passwordUpdate),
+        returnValue: _FakeDateTime_0(
+          this,
+          Invocation.getter(#passwordUpdate),
+        ),
+        returnValueForMissingStub: _FakeDateTime_0(
+          this,
+          Invocation.getter(#passwordUpdate),
+        ),
+      ) as DateTime);
+
+  @override
+  String get email => (super.noSuchMethod(
+        Invocation.getter(#email),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#email),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#email),
+        ),
+      ) as String);
+
+  @override
+  String get phone => (super.noSuchMethod(
+        Invocation.getter(#phone),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#phone),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#phone),
+        ),
+      ) as String);
+
+  @override
+  bool get emailVerification => (super.noSuchMethod(
+        Invocation.getter(#emailVerification),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  bool get phoneVerification => (super.noSuchMethod(
+        Invocation.getter(#phoneVerification),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  Map<String, String> get prefs => (super.noSuchMethod(
+        Invocation.getter(#prefs),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+
+  @override
+  DateTime get accessedAt => (super.noSuchMethod(
+        Invocation.getter(#accessedAt),
+        returnValue: _FakeDateTime_0(
+          this,
+          Invocation.getter(#accessedAt),
+        ),
+        returnValueForMissingStub: _FakeDateTime_0(
+          this,
+          Invocation.getter(#accessedAt),
+        ),
+      ) as DateTime);
+
+  @override
+  _i2.User toUser() => (super.noSuchMethod(
+        Invocation.method(
+          #toUser,
+          [],
+        ),
+        returnValue: _FakeUser_1(
+          this,
+          Invocation.method(
+            #toUser,
+            [],
+          ),
+        ),
+        returnValueForMissingStub: _FakeUser_1(
+          this,
+          Invocation.method(
+            #toUser,
+            [],
+          ),
+        ),
+      ) as _i2.User);
+
+  @override
+  _i3.UserEntity copyWith({
+    String? uid,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    String? username,
+    DateTime? registration,
+    bool? activeStatus,
+    List<String>? labels,
+    DateTime? passwordUpdate,
+    String? email,
+    String? phone,
+    bool? emailVerification,
+    bool? phoneVerification,
+    Map<String, String>? prefs,
+    DateTime? accessedAt,
+  }) =>
       (super.noSuchMethod(
         Invocation.method(
-          #loginWithEmailAndPassword,
+          #copyWith,
           [],
           {
+            #uid: uid,
+            #createdAt: createdAt,
+            #updatedAt: updatedAt,
+            #username: username,
+            #registration: registration,
+            #activeStatus: activeStatus,
+            #labels: labels,
+            #passwordUpdate: passwordUpdate,
             #email: email,
-            #password: password,
+            #phone: phone,
+            #emailVerification: emailVerification,
+            #phoneVerification: phoneVerification,
+            #prefs: prefs,
+            #accessedAt: accessedAt,
           },
         ),
-        returnValue: _i3.Future<_i4.Either<_i5.Failure, String>>.value(
-            _i6.dummyValue<_i4.Either<_i5.Failure, String>>(
+        returnValue: _FakeUserEntity_2(
           this,
           Invocation.method(
-            #loginWithEmailAndPassword,
+            #copyWith,
             [],
             {
+              #uid: uid,
+              #createdAt: createdAt,
+              #updatedAt: updatedAt,
+              #username: username,
+              #registration: registration,
+              #activeStatus: activeStatus,
+              #labels: labels,
+              #passwordUpdate: passwordUpdate,
               #email: email,
-              #password: password,
+              #phone: phone,
+              #emailVerification: emailVerification,
+              #phoneVerification: phoneVerification,
+              #prefs: prefs,
+              #accessedAt: accessedAt,
             },
           ),
-        )),
-        returnValueForMissingStub:
-            _i3.Future<_i4.Either<_i5.Failure, String>>.value(
-                _i6.dummyValue<_i4.Either<_i5.Failure, String>>(
+        ),
+        returnValueForMissingStub: _FakeUserEntity_2(
           this,
           Invocation.method(
-            #loginWithEmailAndPassword,
+            #copyWith,
             [],
             {
+              #uid: uid,
+              #createdAt: createdAt,
+              #updatedAt: updatedAt,
+              #username: username,
+              #registration: registration,
+              #activeStatus: activeStatus,
+              #labels: labels,
+              #passwordUpdate: passwordUpdate,
               #email: email,
-              #password: password,
+              #phone: phone,
+              #emailVerification: emailVerification,
+              #phoneVerification: phoneVerification,
+              #prefs: prefs,
+              #accessedAt: accessedAt,
             },
           ),
-        )),
-      ) as _i3.Future<_i4.Either<_i5.Failure, String>>);
+        ),
+      ) as _i3.UserEntity);
 }

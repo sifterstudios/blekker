@@ -28,7 +28,6 @@ void main() {
       // Act
       expect(
         () => authRemoteDataSource.loginWithEmailAndPassword(
-          name: 'name',
           email: 'email',
           password: 'password',
         ),
@@ -60,7 +59,7 @@ void main() {
       );
 
       // Assert
-      expect(result, 'success');
+      expect(result, mockUser);
     });
     test('should throw ServerException when signing up with missing fields',
         () async {

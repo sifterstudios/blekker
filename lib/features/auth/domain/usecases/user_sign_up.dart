@@ -1,15 +1,18 @@
+// Copyright 2024 Sifterstudios
+
 import 'package:blekker/app/error/failures.dart';
 import 'package:blekker/app/usecase/usecase.dart';
+import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:blekker/features/auth/domain/repository/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
-class UserSignup implements UseCase<String, UserSignupParams> {
+class UserSignup implements UseCase<UserEntity, UserSignupParams> {
   UserSignup({required this.authRepository});
 
   final AuthRepository authRepository;
 
   @override
-  Future<Either<Failure, String>> call(UserSignupParams params) async {
+  Future<Either<Failure, UserEntity>> call(UserSignupParams params) async {
     return authRepository.signupWithEmailAndPassword(
       name: params.name,
       email: params.email,

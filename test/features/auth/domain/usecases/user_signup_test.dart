@@ -1,6 +1,7 @@
 // Copyright 2024 Sifterstudios
 
 import 'package:blekker/app/error/failures.dart';
+import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:blekker/features/auth/domain/repository/auth_repository.dart';
 import 'package:blekker/features/auth/domain/usecases/user_sign_up.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -13,14 +14,16 @@ import 'user_signup_test.mocks.dart';
 @GenerateNiceMocks(
   [
     MockSpec<AuthRepository>(as: #MockAuthRepository),
+    MockSpec<UserEntity>(as: #MockUserEntity),
   ],
 )
 void main() {
   final authRepository = MockAuthRepository();
+  final mockUserEntity = MockUserEntity();
   final userSignup = UserSignup(authRepository: authRepository);
-  final successDummy = Either<Failure, String>.right('success');
+  final successDummy = Either<Failure, UserEntity>.right(mockUserEntity);
   final failureDummy =
-      Either<Failure, String>.left(Failure('Please fill in all fields'));
+      Either<Failure, UserEntity>.left(Failure('Please fill in all fields'));
   group('UserSignUp', () {
     test('should return RIGHT when correct arguments are passed', () async {
       // arrange
@@ -31,7 +34,7 @@ void main() {
           email: 'email',
           password: 'password',
         ),
-      ).thenAnswer((_) async => const Right('success'));
+      ).thenAnswer((_) async => Right(mockUserEntity));
       // act
       final result = await userSignup(
         UserSignupParams(

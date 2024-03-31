@@ -1,17 +1,17 @@
 // Copyright 2024 Sifterstudios
 
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 import 'package:blekker/app/error/exceptions.dart';
 
 abstract interface class AuthRemoteDataSource {
-  Future<String> signupWithEmailAndPassword({
+  Future<User> signupWithEmailAndPassword({
     required String name,
     required String email,
     required String password,
   });
 
-  Future<String> loginWithEmailAndPassword({
-    required String name,
+  Future<Session> loginWithEmailAndPassword({
     required String email,
     required String password,
   });
@@ -23,16 +23,26 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final Client client;
 
   @override
-  Future<String> loginWithEmailAndPassword({
-    required String name,
+  Future<Session> loginWithEmailAndPassword({
     required String email,
     required String password,
-  }) {
-    throw UnimplementedError();
+    Account? account,
+  }) async {
+    try {
+      final localAccount = account ?? Account(client);
+      final session = await localAccount.createEmailPasswordSession(
+        email: email,
+        password: password,
+      );
+
+      return session;
+    } catch (e) {
+      throw ServerException(e.toString());
+    }
   }
 
   @override
-  Future<String> signupWithEmailAndPassword({
+  Future<User> signupWithEmailAndPassword({
     required String name,
     required String email,
     required String password,
@@ -42,14 +52,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     try {
       final localAccount = account ?? Account(client);
 
-      final userResponse = await localAccount.create(
+      final user = await localAccount.create(
         userId: userId ?? ID.unique(),
         email: email,
         password: password,
         name: name,
       );
 
-      return userResponse.$id;
+      return user;
     } catch (e) {
       throw ServerException(e.toString());
     }
