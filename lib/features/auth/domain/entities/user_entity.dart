@@ -31,13 +31,13 @@ class UserEntity {
       username: user.name,
       registration: DateTime.parse(user.registration),
       activeStatus: user.status,
-      labels: user.labels as List<String>,
+      labels: user.labels,
       passwordUpdate: DateTime.parse(user.passwordUpdate),
       email: user.email,
       phone: user.phone,
       emailVerification: user.emailVerification,
       phoneVerification: user.phoneVerification,
-      prefs: user.prefs as Map<String, String>,
+      prefs: user.prefs.toMap(),
       accessedAt: DateTime.parse(user.accessedAt),
     );
   }
@@ -69,13 +69,13 @@ class UserEntity {
   final String username;
   final DateTime registration;
   final bool activeStatus;
-  final List<String> labels;
+  final List<dynamic> labels;
   final DateTime passwordUpdate;
   final String email;
   final String phone;
   final bool emailVerification;
   final bool phoneVerification;
-  final Map<String, String> prefs;
+  final Map<String, dynamic> prefs;
   final DateTime accessedAt;
 
   @override

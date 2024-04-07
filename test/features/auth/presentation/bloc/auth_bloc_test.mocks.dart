@@ -194,11 +194,11 @@ class MockUserEntity extends _i1.Mock implements _i4.UserEntity {
       ) as bool);
 
   @override
-  List<String> get labels => (super.noSuchMethod(
+  List<dynamic> get labels => (super.noSuchMethod(
         Invocation.getter(#labels),
-        returnValue: <String>[],
-        returnValueForMissingStub: <String>[],
-      ) as List<String>);
+        returnValue: <dynamic>[],
+        returnValueForMissingStub: <dynamic>[],
+      ) as List<dynamic>);
 
   @override
   DateTime get passwordUpdate => (super.noSuchMethod(
@@ -254,11 +254,11 @@ class MockUserEntity extends _i1.Mock implements _i4.UserEntity {
       ) as bool);
 
   @override
-  Map<String, String> get prefs => (super.noSuchMethod(
+  Map<String, dynamic> get prefs => (super.noSuchMethod(
         Invocation.getter(#prefs),
-        returnValue: <String, String>{},
-        returnValueForMissingStub: <String, String>{},
-      ) as Map<String, String>);
+        returnValue: <String, dynamic>{},
+        returnValueForMissingStub: <String, dynamic>{},
+      ) as Map<String, dynamic>);
 
   @override
   DateTime get accessedAt => (super.noSuchMethod(

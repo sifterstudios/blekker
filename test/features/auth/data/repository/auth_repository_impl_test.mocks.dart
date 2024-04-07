@@ -77,6 +77,16 @@ class _FakeUserEntity_4 extends _i1.SmartFake implements _i3.UserEntity {
         );
 }
 
+class _FakeDuration_5 extends _i1.SmartFake implements Duration {
+  _FakeDuration_5(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [AuthRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -428,11 +438,11 @@ class MockUserEntity extends _i1.Mock implements _i3.UserEntity {
       ) as bool);
 
   @override
-  List<String> get labels => (super.noSuchMethod(
+  List<dynamic> get labels => (super.noSuchMethod(
         Invocation.getter(#labels),
-        returnValue: <String>[],
-        returnValueForMissingStub: <String>[],
-      ) as List<String>);
+        returnValue: <dynamic>[],
+        returnValueForMissingStub: <dynamic>[],
+      ) as List<dynamic>);
 
   @override
   DateTime get passwordUpdate => (super.noSuchMethod(
@@ -488,11 +498,11 @@ class MockUserEntity extends _i1.Mock implements _i3.UserEntity {
       ) as bool);
 
   @override
-  Map<String, String> get prefs => (super.noSuchMethod(
+  Map<String, dynamic> get prefs => (super.noSuchMethod(
         Invocation.getter(#prefs),
-        returnValue: <String, String>{},
-        returnValueForMissingStub: <String, String>{},
-      ) as Map<String, String>);
+        returnValue: <String, dynamic>{},
+        returnValueForMissingStub: <String, dynamic>{},
+      ) as Map<String, dynamic>);
 
   @override
   DateTime get accessedAt => (super.noSuchMethod(
@@ -614,4 +624,291 @@ class MockUserEntity extends _i1.Mock implements _i3.UserEntity {
           ),
         ),
       ) as _i3.UserEntity);
+}
+
+/// A class which mocks [DateTime].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDateTime extends _i1.Mock implements DateTime {
+  @override
+  bool get isUtc => (super.noSuchMethod(
+        Invocation.getter(#isUtc),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  int get millisecondsSinceEpoch => (super.noSuchMethod(
+        Invocation.getter(#millisecondsSinceEpoch),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get microsecondsSinceEpoch => (super.noSuchMethod(
+        Invocation.getter(#microsecondsSinceEpoch),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  String get timeZoneName => (super.noSuchMethod(
+        Invocation.getter(#timeZoneName),
+        returnValue: _i6.dummyValue<String>(
+          this,
+          Invocation.getter(#timeZoneName),
+        ),
+        returnValueForMissingStub: _i6.dummyValue<String>(
+          this,
+          Invocation.getter(#timeZoneName),
+        ),
+      ) as String);
+
+  @override
+  Duration get timeZoneOffset => (super.noSuchMethod(
+        Invocation.getter(#timeZoneOffset),
+        returnValue: _FakeDuration_5(
+          this,
+          Invocation.getter(#timeZoneOffset),
+        ),
+        returnValueForMissingStub: _FakeDuration_5(
+          this,
+          Invocation.getter(#timeZoneOffset),
+        ),
+      ) as Duration);
+
+  @override
+  int get year => (super.noSuchMethod(
+        Invocation.getter(#year),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get month => (super.noSuchMethod(
+        Invocation.getter(#month),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get day => (super.noSuchMethod(
+        Invocation.getter(#day),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get hour => (super.noSuchMethod(
+        Invocation.getter(#hour),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get minute => (super.noSuchMethod(
+        Invocation.getter(#minute),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get second => (super.noSuchMethod(
+        Invocation.getter(#second),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get millisecond => (super.noSuchMethod(
+        Invocation.getter(#millisecond),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get microsecond => (super.noSuchMethod(
+        Invocation.getter(#microsecond),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  int get weekday => (super.noSuchMethod(
+        Invocation.getter(#weekday),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  bool isBefore(DateTime? other) => (super.noSuchMethod(
+        Invocation.method(
+          #isBefore,
+          [other],
+        ),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  bool isAfter(DateTime? other) => (super.noSuchMethod(
+        Invocation.method(
+          #isAfter,
+          [other],
+        ),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  bool isAtSameMomentAs(DateTime? other) => (super.noSuchMethod(
+        Invocation.method(
+          #isAtSameMomentAs,
+          [other],
+        ),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  int compareTo(DateTime? other) => (super.noSuchMethod(
+        Invocation.method(
+          #compareTo,
+          [other],
+        ),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  DateTime toLocal() => (super.noSuchMethod(
+        Invocation.method(
+          #toLocal,
+          [],
+        ),
+        returnValue: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #toLocal,
+            [],
+          ),
+        ),
+        returnValueForMissingStub: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #toLocal,
+            [],
+          ),
+        ),
+      ) as DateTime);
+
+  @override
+  DateTime toUtc() => (super.noSuchMethod(
+        Invocation.method(
+          #toUtc,
+          [],
+        ),
+        returnValue: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #toUtc,
+            [],
+          ),
+        ),
+        returnValueForMissingStub: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #toUtc,
+            [],
+          ),
+        ),
+      ) as DateTime);
+
+  @override
+  String toIso8601String() => (super.noSuchMethod(
+        Invocation.method(
+          #toIso8601String,
+          [],
+        ),
+        returnValue: _i6.dummyValue<String>(
+          this,
+          Invocation.method(
+            #toIso8601String,
+            [],
+          ),
+        ),
+        returnValueForMissingStub: _i6.dummyValue<String>(
+          this,
+          Invocation.method(
+            #toIso8601String,
+            [],
+          ),
+        ),
+      ) as String);
+
+  @override
+  DateTime add(Duration? duration) => (super.noSuchMethod(
+        Invocation.method(
+          #add,
+          [duration],
+        ),
+        returnValue: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #add,
+            [duration],
+          ),
+        ),
+        returnValueForMissingStub: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #add,
+            [duration],
+          ),
+        ),
+      ) as DateTime);
+
+  @override
+  DateTime subtract(Duration? duration) => (super.noSuchMethod(
+        Invocation.method(
+          #subtract,
+          [duration],
+        ),
+        returnValue: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #subtract,
+            [duration],
+          ),
+        ),
+        returnValueForMissingStub: _FakeDateTime_3(
+          this,
+          Invocation.method(
+            #subtract,
+            [duration],
+          ),
+        ),
+      ) as DateTime);
+
+  @override
+  Duration difference(DateTime? other) => (super.noSuchMethod(
+        Invocation.method(
+          #difference,
+          [other],
+        ),
+        returnValue: _FakeDuration_5(
+          this,
+          Invocation.method(
+            #difference,
+            [other],
+          ),
+        ),
+        returnValueForMissingStub: _FakeDuration_5(
+          this,
+          Invocation.method(
+            #difference,
+            [other],
+          ),
+        ),
+      ) as Duration);
 }

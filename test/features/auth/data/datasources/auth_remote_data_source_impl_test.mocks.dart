@@ -2112,3 +2112,370 @@ class MockUser extends _i1.Mock implements _i3.User {
         returnValueForMissingStub: <String, dynamic>{},
       ) as Map<String, dynamic>);
 }
+
+/// A class which mocks [Session].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSession extends _i1.Mock implements _i3.Session {
+  @override
+  String get $id => (super.noSuchMethod(
+        Invocation.getter(#$id),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$id),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$id),
+        ),
+      ) as String);
+
+  @override
+  String get $createdAt => (super.noSuchMethod(
+        Invocation.getter(#$createdAt),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$createdAt),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$createdAt),
+        ),
+      ) as String);
+
+  @override
+  String get userId => (super.noSuchMethod(
+        Invocation.getter(#userId),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#userId),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#userId),
+        ),
+      ) as String);
+
+  @override
+  String get expire => (super.noSuchMethod(
+        Invocation.getter(#expire),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#expire),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#expire),
+        ),
+      ) as String);
+
+  @override
+  String get provider => (super.noSuchMethod(
+        Invocation.getter(#provider),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#provider),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#provider),
+        ),
+      ) as String);
+
+  @override
+  String get providerUid => (super.noSuchMethod(
+        Invocation.getter(#providerUid),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerUid),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerUid),
+        ),
+      ) as String);
+
+  @override
+  String get providerAccessToken => (super.noSuchMethod(
+        Invocation.getter(#providerAccessToken),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerAccessToken),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerAccessToken),
+        ),
+      ) as String);
+
+  @override
+  String get providerAccessTokenExpiry => (super.noSuchMethod(
+        Invocation.getter(#providerAccessTokenExpiry),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerAccessTokenExpiry),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerAccessTokenExpiry),
+        ),
+      ) as String);
+
+  @override
+  String get providerRefreshToken => (super.noSuchMethod(
+        Invocation.getter(#providerRefreshToken),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerRefreshToken),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#providerRefreshToken),
+        ),
+      ) as String);
+
+  @override
+  String get ip => (super.noSuchMethod(
+        Invocation.getter(#ip),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#ip),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#ip),
+        ),
+      ) as String);
+
+  @override
+  String get osCode => (super.noSuchMethod(
+        Invocation.getter(#osCode),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osCode),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osCode),
+        ),
+      ) as String);
+
+  @override
+  String get osName => (super.noSuchMethod(
+        Invocation.getter(#osName),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osName),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osName),
+        ),
+      ) as String);
+
+  @override
+  String get osVersion => (super.noSuchMethod(
+        Invocation.getter(#osVersion),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osVersion),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#osVersion),
+        ),
+      ) as String);
+
+  @override
+  String get clientType => (super.noSuchMethod(
+        Invocation.getter(#clientType),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientType),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientType),
+        ),
+      ) as String);
+
+  @override
+  String get clientCode => (super.noSuchMethod(
+        Invocation.getter(#clientCode),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientCode),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientCode),
+        ),
+      ) as String);
+
+  @override
+  String get clientName => (super.noSuchMethod(
+        Invocation.getter(#clientName),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientName),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientName),
+        ),
+      ) as String);
+
+  @override
+  String get clientVersion => (super.noSuchMethod(
+        Invocation.getter(#clientVersion),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientVersion),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientVersion),
+        ),
+      ) as String);
+
+  @override
+  String get clientEngine => (super.noSuchMethod(
+        Invocation.getter(#clientEngine),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientEngine),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientEngine),
+        ),
+      ) as String);
+
+  @override
+  String get clientEngineVersion => (super.noSuchMethod(
+        Invocation.getter(#clientEngineVersion),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientEngineVersion),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#clientEngineVersion),
+        ),
+      ) as String);
+
+  @override
+  String get deviceName => (super.noSuchMethod(
+        Invocation.getter(#deviceName),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceName),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceName),
+        ),
+      ) as String);
+
+  @override
+  String get deviceBrand => (super.noSuchMethod(
+        Invocation.getter(#deviceBrand),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceBrand),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceBrand),
+        ),
+      ) as String);
+
+  @override
+  String get deviceModel => (super.noSuchMethod(
+        Invocation.getter(#deviceModel),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceModel),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#deviceModel),
+        ),
+      ) as String);
+
+  @override
+  String get countryCode => (super.noSuchMethod(
+        Invocation.getter(#countryCode),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#countryCode),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#countryCode),
+        ),
+      ) as String);
+
+  @override
+  String get countryName => (super.noSuchMethod(
+        Invocation.getter(#countryName),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#countryName),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#countryName),
+        ),
+      ) as String);
+
+  @override
+  bool get current => (super.noSuchMethod(
+        Invocation.getter(#current),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  List<dynamic> get factors => (super.noSuchMethod(
+        Invocation.getter(#factors),
+        returnValue: <dynamic>[],
+        returnValueForMissingStub: <dynamic>[],
+      ) as List<dynamic>);
+
+  @override
+  String get secret => (super.noSuchMethod(
+        Invocation.getter(#secret),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#secret),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#secret),
+        ),
+      ) as String);
+
+  @override
+  String get mfaUpdatedAt => (super.noSuchMethod(
+        Invocation.getter(#mfaUpdatedAt),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#mfaUpdatedAt),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#mfaUpdatedAt),
+        ),
+      ) as String);
+
+  @override
+  Map<String, dynamic> toMap() => (super.noSuchMethod(
+        Invocation.method(
+          #toMap,
+          [],
+        ),
+        returnValue: <String, dynamic>{},
+        returnValueForMissingStub: <String, dynamic>{},
+      ) as Map<String, dynamic>);
+}

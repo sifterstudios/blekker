@@ -18,6 +18,7 @@ import 'auth_repository_impl_test.mocks.dart';
     MockSpec<AuthRemoteDataSource>(),
     MockSpec<User>(as: #MockUser),
     MockSpec<UserEntity>(as: #MockUserEntity),
+    MockSpec<DateTime>(as: #MockDateTime),
   ],
 )
 void main() {
@@ -40,14 +41,51 @@ void main() {
     });
     test('should pass RIGHT when sending correct arguments', () async {
       // arrange
+      final iso8601String = DateTime(2020).toIso8601String();
+      final myUser = User(
+        $id: 'id',
+        $createdAt: iso8601String,
+        $updatedAt: iso8601String,
+        name: 'John Doe',
+        password: 'password',
+        hash: 'hash',
+        hashOptions: Map<dynamic, dynamic>(),
+        registration: iso8601String,
+        status: true,
+        labels: List<dynamic>.empty(),
+        passwordUpdate: iso8601String,
+        email: 'john@doe.com',
+        phone: '123456789',
+        emailVerification: false,
+        phoneVerification: false,
+        mfa: false,
+        prefs: Preferences(data: {}),
+        targets: List<Target>.empty(),
+        accessedAt: iso8601String,
+      );
       provideDummy(signupDummy);
+      when(
+        mockUser.accessedAt,
+      ).thenReturn(iso8601String);
+      when(
+        mockUser.passwordUpdate,
+      ).thenReturn(iso8601String);
+      when(
+        mockUser.registration,
+      ).thenReturn(iso8601String);
+      when(
+        mockUser.$createdAt,
+      ).thenReturn(iso8601String);
+      when(
+        mockUser.$updatedAt,
+      ).thenReturn(iso8601String);
       when(
         authRemoteDataSource.signupWithEmailAndPassword(
           name: 'name',
           email: 'email',
           password: 'password',
         ),
-      ).thenAnswer((_) async => Future<User>.value(mockUser));
+      ).thenAnswer((_) async => Future<User>.value(myUser));
       // act
       final result = await authRepository.signupWithEmailAndPassword(
         name: 'name',
@@ -57,7 +95,7 @@ void main() {
 
       // assert
       expect(result.isRight(), true);
-      expect(result.getRight(), isA<UserEntity>());
+      expect(result.getRight(), isA<Some<UserEntity>>());
     });
     test('should pass LEFT when sending incorrect arguments', () async {
       // arrange

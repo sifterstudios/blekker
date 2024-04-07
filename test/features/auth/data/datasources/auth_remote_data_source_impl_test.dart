@@ -15,28 +15,43 @@ import 'auth_remote_data_source_impl_test.mocks.dart';
     MockSpec<Account>(),
     MockSpec<Client>(),
     MockSpec<User>(as: #MockUser),
+    MockSpec<Session>(as: #MockSession),
   ],
 )
 void main() {
   final client = MockClient();
   final account = MockAccount();
   final mockUser = MockUser();
+  final mockSession = MockSession();
   final authRemoteDataSource = AuthRemoteDataSourceImpl(client: client);
 
   group('AuthRemoteDataSource', () {
-    test('should throw unimplemented when trying to log in', () {
-      // Act
-      expect(
-        () => authRemoteDataSource.loginWithEmailAndPassword(
+    test(
+        'should return SessionEntity when logging in '
+        'with credentials', () async {
+      // Arrange
+      when(
+        account.createEmailPasswordSession(
           email: 'email',
           password: 'password',
         ),
-        throwsA(isA<UnimplementedError>()),
+      ).thenAnswer((_) async => Future<Session>.value(mockSession));
+
+      when(mockSession.providerAccessToken).thenReturn('success');
+
+      // Act
+      final result = await authRemoteDataSource.loginWithEmailAndPassword(
+        email: 'email',
+        password: 'password',
+        account: account,
       );
+
+      // Assert
+      expect(result, mockSession);
+      expect(result.providerAccessToken, 'success');
     });
     test('should return unique user id when signing up user', () async {
       // Arrange
-      // when(Account(client)).thenReturn(account);
       final userId = ID.unique();
       when(
         account.create(
