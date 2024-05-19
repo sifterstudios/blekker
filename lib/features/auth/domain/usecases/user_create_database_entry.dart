@@ -13,17 +13,13 @@ class UserInitDatabase implements UseCase<SessionEntity, UserDatabaseParams> {
 
   @override
   Future<Either<Failure, SessionEntity>> call(UserDatabaseParams params) async {
-    final result = await authRepository.loginWithEmailAndPassword(
+    final response = await authRepository.loginWithEmailAndPassword(
       email: params.email,
       password: params.password,
     );
 
-    return result.fold(handleFailure, handleSession);
+    return response;
   }
-
-  Failure handleFailure(Failure l) => l;
-
-  SessionEntity handleSession(SessionEntity r) => r;
 }
 
 class UserDatabaseParams {

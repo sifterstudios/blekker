@@ -5,6 +5,7 @@ import 'package:blekker/app/error/exceptions.dart';
 import 'package:blekker/app/error/failures.dart';
 import 'package:blekker/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:blekker/features/auth/data/repository/auth_repository_impl.dart';
+import 'package:blekker/features/auth/domain/entities/session_entity.dart';
 import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
@@ -19,6 +20,8 @@ import 'auth_repository_impl_test.mocks.dart';
     MockSpec<User>(as: #MockUser),
     MockSpec<UserEntity>(as: #MockUserEntity),
     MockSpec<DateTime>(as: #MockDateTime),
+    MockSpec<Session>(as: #MockSession),
+    MockSpec<SessionEntity>(as: #MockSessionEntity),
   ],
 )
 void main() {
@@ -27,16 +30,67 @@ void main() {
   final mockUser = MockUser();
   final mockUserEntity = MockUserEntity();
   final signupDummy = Either<Failure, UserEntity>.right(mockUserEntity);
+  final mockSession = MockSession();
+  final mockSessionEntity = MockSessionEntity();
   group('AuthRepositoryImpl', () {
-    test('should throw unimplemented error when trying to log in', () async {
+    test('should return sessionEntity when loginWithEmailAndPassword is called',
+        () async {
+      // arrange
+
+      final iso8601String = DateTime(2020).toIso8601String();
+
+      when(
+        mockSession.$createdAt,
+      ).thenReturn(iso8601String);
+      when(
+        mockSession.expire,
+      ).thenReturn(iso8601String);
+      when(
+        mockSession.providerAccessTokenExpiry,
+      ).thenReturn(iso8601String);
+      when(
+        mockSession.mfaUpdatedAt,
+      ).thenReturn(iso8601String);
+      when(
+        authRemoteDataSource.loginWithEmailAndPassword(
+          email: 'email',
+          password: 'password',
+        ),
+      ).thenAnswer((_) async => Future<Session>.value(mockSession));
+      when(
+        authRemoteDataSource.loginWithEmailAndPassword(
+          email: 'email',
+          password: 'password',
+        ),
+      ).thenAnswer((_) async => Future<Session>.value(mockSession));
+
+      // act
+      final result = await authRepository.loginWithEmailAndPassword(
+        email: 'email',
+        password: 'password',
+      );
+
+      // assert
+      expect(result.isRight(), true);
+    });
+    test('should throw ServerException when trying to log in with empty fields',
+        () async {
+      // arrange
+      when(
+        authRemoteDataSource.loginWithEmailAndPassword(
+          email: '',
+          password: '',
+        ),
+      ).thenThrow(ServerException('LEFT'));
+
       // act
       try {
         await authRepository.loginWithEmailAndPassword(
-          email: 'email',
-          password: 'password',
+          email: '',
+          password: '',
         );
       } catch (e) {
-        throwsA(UnimplementedError());
+        throwsA(ServerException('LEFT'));
       }
     });
     test('should pass RIGHT when sending correct arguments', () async {

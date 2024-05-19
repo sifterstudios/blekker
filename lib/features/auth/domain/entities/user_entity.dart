@@ -1,10 +1,12 @@
 // Copyright 2024 Sifterstudios
 
 import 'package:appwrite/models.dart';
+import 'package:blekker/app/utils/equatable/equatable_date_time.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable
-class UserEntity {
+class UserEntity extends Equatable {
 //<editor-fold desc="Data Methods">
   const UserEntity({
     required this.uid,
@@ -26,19 +28,19 @@ class UserEntity {
   factory UserEntity.fromUser(User user) {
     return UserEntity(
       uid: user.$id,
-      createdAt: DateTime.parse(user.$createdAt),
-      updatedAt: DateTime.parse(user.$updatedAt),
+      createdAt: EquatableDateTime(DateTime.parse(user.$createdAt)),
+      updatedAt: EquatableDateTime(DateTime.parse(user.$updatedAt)),
       username: user.name,
-      registration: DateTime.parse(user.registration),
+      registration: EquatableDateTime(DateTime.parse(user.registration)),
       activeStatus: user.status,
       labels: user.labels,
-      passwordUpdate: DateTime.parse(user.passwordUpdate),
+      passwordUpdate: EquatableDateTime(DateTime.parse(user.passwordUpdate)),
       email: user.email,
       phone: user.phone,
       emailVerification: user.emailVerification,
       phoneVerification: user.phoneVerification,
-      prefs: user.prefs.toMap(),
-      accessedAt: DateTime.parse(user.accessedAt),
+      prefs: user.prefs.data,
+      accessedAt: EquatableDateTime(DateTime.parse(user.accessedAt)),
     );
   }
 
@@ -64,107 +66,38 @@ class UserEntity {
   }
 
   final String uid;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final EquatableDateTime createdAt;
+  final EquatableDateTime updatedAt;
   final String username;
-  final DateTime registration;
+  final EquatableDateTime registration;
   final bool activeStatus;
   final List<dynamic> labels;
-  final DateTime passwordUpdate;
+  final EquatableDateTime passwordUpdate;
   final String email;
   final String phone;
   final bool emailVerification;
   final bool phoneVerification;
   final Map<String, dynamic> prefs;
-  final DateTime accessedAt;
+  final EquatableDateTime accessedAt;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      (other is UserEntity &&
-          runtimeType == other.runtimeType &&
-          uid == other.uid &&
-          createdAt == other.createdAt &&
-          updatedAt == other.updatedAt &&
-          username == other.username &&
-          registration == other.registration &&
-          activeStatus == other.activeStatus &&
-          labels == other.labels &&
-          passwordUpdate == other.passwordUpdate &&
-          email == other.email &&
-          phone == other.phone &&
-          emailVerification == other.emailVerification &&
-          phoneVerification == other.phoneVerification &&
-          prefs == other.prefs &&
-          accessedAt == other.accessedAt);
-
-  @override
-  int get hashCode =>
-      uid.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode ^
-      username.hashCode ^
-      registration.hashCode ^
-      activeStatus.hashCode ^
-      labels.hashCode ^
-      passwordUpdate.hashCode ^
-      email.hashCode ^
-      phone.hashCode ^
-      emailVerification.hashCode ^
-      phoneVerification.hashCode ^
-      prefs.hashCode ^
-      accessedAt.hashCode;
-
-  @override
-  String toString() {
-    return 'SessionEntity{ '
-        'uid: $uid, '
-        'createdAt: $createdAt, '
-        'updatedAt: $updatedAt, '
-        'username: $username, '
-        'registration: $registration, '
-        'activeStatus: $activeStatus, '
-        'labels: $labels, '
-        'passwordUpdate: $passwordUpdate, '
-        'email: $email, phone: $phone, '
-        'emailVerification: $emailVerification, '
-        'phoneVerification: $phoneVerification, '
-        'prefs: $prefs, '
-        'accessedAt: $accessedAt,}';
-  }
-
-  UserEntity copyWith({
-    String? uid,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    String? username,
-    DateTime? registration,
-    bool? activeStatus,
-    List<String>? labels,
-    DateTime? passwordUpdate,
-    String? email,
-    String? phone,
-    bool? emailVerification,
-    bool? phoneVerification,
-    Map<String, String>? prefs,
-    DateTime? accessedAt,
-  }) {
-    return UserEntity(
-      uid: uid ?? this.uid,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
-      username: username ?? this.username,
-      registration: registration ?? this.registration,
-      activeStatus: activeStatus ?? this.activeStatus,
-      labels: labels ?? this.labels,
-      passwordUpdate: passwordUpdate ?? this.passwordUpdate,
-      email: email ?? this.email,
-      phone: phone ?? this.phone,
-      emailVerification: emailVerification ?? this.emailVerification,
-      phoneVerification: phoneVerification ?? this.phoneVerification,
-      prefs: prefs ?? this.prefs,
-      accessedAt: accessedAt ?? this.accessedAt,
-    );
+  List<Object?> get props {
+    return [
+      uid,
+      createdAt,
+      updatedAt,
+      username,
+      registration,
+      activeStatus,
+      labels,
+      passwordUpdate,
+      email,
+      phone,
+      emailVerification,
+      phoneVerification,
+      prefs,
+      accessedAt,
+    ];
   }
 //</editor-fold>
 }
