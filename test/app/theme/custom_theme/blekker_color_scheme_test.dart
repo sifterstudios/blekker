@@ -59,12 +59,12 @@ void main() {
       expected.onError,
     );
     expect(
-      actual.background,
-      expected.background,
+      actual.surface,
+      expected.surface,
     );
     expect(
-      actual.onBackground,
-      expected.onBackground,
+      actual.onSurface,
+      expected.onSurface,
     );
     expect(
       actual.surface,

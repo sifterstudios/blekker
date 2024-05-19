@@ -11,6 +11,7 @@ class SessionEntity extends Equatable {
   const SessionEntity({
     required this.id,
     required this.createdAt,
+    required this.updatedAt,
     required this.userId,
     required this.expire,
     required this.provider,
@@ -26,6 +27,7 @@ class SessionEntity extends Equatable {
     return SessionEntity(
       id: session.$id,
       createdAt: EquatableDateTime(DateTime.parse(session.$createdAt)),
+      updatedAt: EquatableDateTime(DateTime.parse(session.$updatedAt)),
       userId: session.userId,
       expire: EquatableDateTime(DateTime.parse(session.expire)),
       provider: session.provider,
@@ -41,6 +43,7 @@ class SessionEntity extends Equatable {
 
   final String id;
   final EquatableDateTime createdAt;
+  final EquatableDateTime updatedAt;
   final String userId;
   final EquatableDateTime expire;
   final String provider;

@@ -5,7 +5,6 @@ import 'package:blekker/app/error/exceptions.dart';
 import 'package:blekker/app/error/failures.dart';
 import 'package:blekker/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:blekker/features/auth/data/repository/auth_repository_impl.dart';
-import 'package:blekker/features/auth/domain/entities/session_entity.dart';
 import 'package:blekker/features/auth/domain/entities/user_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
@@ -21,7 +20,6 @@ import 'auth_repository_impl_test.mocks.dart';
     MockSpec<UserEntity>(as: #MockUserEntity),
     MockSpec<DateTime>(as: #MockDateTime),
     MockSpec<Session>(as: #MockSession),
-    MockSpec<SessionEntity>(as: #MockSessionEntity),
   ],
 )
 void main() {
@@ -31,7 +29,6 @@ void main() {
   final mockUserEntity = MockUserEntity();
   final signupDummy = Either<Failure, UserEntity>.right(mockUserEntity);
   final mockSession = MockSession();
-  final mockSessionEntity = MockSessionEntity();
   group('AuthRepositoryImpl', () {
     test('should return sessionEntity when loginWithEmailAndPassword is called',
         () async {
@@ -42,6 +39,7 @@ void main() {
       when(
         mockSession.$createdAt,
       ).thenReturn(iso8601String);
+      when(mockSession.$updatedAt).thenReturn(iso8601String);
       when(
         mockSession.expire,
       ).thenReturn(iso8601String);
@@ -103,7 +101,7 @@ void main() {
         name: 'John Doe',
         password: 'password',
         hash: 'hash',
-        hashOptions: Map<dynamic, dynamic>(),
+        hashOptions: <dynamic, dynamic>{},
         registration: iso8601String,
         status: true,
         labels: List<dynamic>.empty(),

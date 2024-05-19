@@ -482,7 +482,7 @@ class MockAccount extends _i1.Mock implements _i5.Account {
       ) as _i6.Future<_i3.User>);
 
   @override
-  _i6.Future<_i3.User> deleteMfaAuthenticator({
+  _i6.Future<dynamic> deleteMfaAuthenticator({
     required _i7.AuthenticatorType? type,
     required String? otp,
   }) =>
@@ -495,29 +495,9 @@ class MockAccount extends _i1.Mock implements _i5.Account {
             #otp: otp,
           },
         ),
-        returnValue: _i6.Future<_i3.User>.value(_FakeUser_1(
-          this,
-          Invocation.method(
-            #deleteMfaAuthenticator,
-            [],
-            {
-              #type: type,
-              #otp: otp,
-            },
-          ),
-        )),
-        returnValueForMissingStub: _i6.Future<_i3.User>.value(_FakeUser_1(
-          this,
-          Invocation.method(
-            #deleteMfaAuthenticator,
-            [],
-            {
-              #type: type,
-              #otp: otp,
-            },
-          ),
-        )),
-      ) as _i6.Future<_i3.User>);
+        returnValue: _i6.Future<dynamic>.value(),
+        returnValueForMissingStub: _i6.Future<dynamic>.value(),
+      ) as _i6.Future<dynamic>);
 
   @override
   _i6.Future<_i3.MfaChallenge> createMfaChallenge(
@@ -2140,6 +2120,19 @@ class MockSession extends _i1.Mock implements _i3.Session {
         returnValueForMissingStub: _i8.dummyValue<String>(
           this,
           Invocation.getter(#$createdAt),
+        ),
+      ) as String);
+
+  @override
+  String get $updatedAt => (super.noSuchMethod(
+        Invocation.getter(#$updatedAt),
+        returnValue: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$updatedAt),
+        ),
+        returnValueForMissingStub: _i8.dummyValue<String>(
+          this,
+          Invocation.getter(#$updatedAt),
         ),
       ) as String);
 

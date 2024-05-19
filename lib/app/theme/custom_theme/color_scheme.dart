@@ -12,8 +12,6 @@ class BlekkerColorScheme {
     onSecondary: BlekkerColors.secondaryContrastColor,
     error: Colors.purpleAccent,
     onError: Colors.black,
-    background: BlekkerColors.backgroundColor,
-    onBackground: BlekkerColors.mainTextColor,
     surface: BlekkerColors.secondaryColor,
     onSurface: BlekkerColors.secondaryContrastColor,
   );

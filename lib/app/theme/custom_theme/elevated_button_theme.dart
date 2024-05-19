@@ -6,22 +6,22 @@ import 'package:flutter/material.dart';
 class BlekkerElevatedButtonTheme {
   static ElevatedButtonThemeData theme = ElevatedButtonThemeData(
     style: ButtonStyle(
-      padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
-      shape: MaterialStateProperty.all(LinearBorder.none),
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.pressed)) {
+      padding: WidgetStateProperty.all(const EdgeInsets.all(10)),
+      shape: WidgetStateProperty.all(LinearBorder.none),
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.pressed)) {
           return BlekkerColors.primaryContrastColor;
         }
         return BlekkerColors.primaryColor;
       }),
-      backgroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.pressed)) {
+      backgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.pressed)) {
           return BlekkerColors.primaryContrastColor;
         }
         return BlekkerColors.primaryColor;
       }),
-      textStyle: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.pressed)) {
+      textStyle: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.pressed)) {
           return const TextStyle().copyWith(
             color: BlekkerColors.secondaryColor,
             fontSize: 85,

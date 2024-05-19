@@ -11,8 +11,6 @@ import 'package:appwrite/models.dart' as _i2;
 import 'package:blekker/app/utils/equatable/equatable_date_time.dart' as _i3;
 import 'package:blekker/features/auth/data/datasources/auth_remote_data_source.dart'
     as _i4;
-import 'package:blekker/features/auth/domain/entities/session_entity.dart'
-    as _i8;
 import 'package:blekker/features/auth/domain/entities/user_entity.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
@@ -869,6 +867,19 @@ class MockSession extends _i1.Mock implements _i2.Session {
       ) as String);
 
   @override
+  String get $updatedAt => (super.noSuchMethod(
+        Invocation.getter(#$updatedAt),
+        returnValue: _i6.dummyValue<String>(
+          this,
+          Invocation.getter(#$updatedAt),
+        ),
+        returnValueForMissingStub: _i6.dummyValue<String>(
+          this,
+          Invocation.getter(#$updatedAt),
+        ),
+      ) as String);
+
+  @override
   String get userId => (super.noSuchMethod(
         Invocation.getter(#userId),
         returnValue: _i6.dummyValue<String>(
@@ -1203,154 +1214,4 @@ class MockSession extends _i1.Mock implements _i2.Session {
         returnValue: <String, dynamic>{},
         returnValueForMissingStub: <String, dynamic>{},
       ) as Map<String, dynamic>);
-}
-
-/// A class which mocks [SessionEntity].
-///
-/// See the documentation for Mockito's code generation for more information.
-// ignore: must_be_immutable
-class MockSessionEntity extends _i1.Mock implements _i8.SessionEntity {
-  @override
-  String get id => (super.noSuchMethod(
-        Invocation.getter(#id),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#id),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#id),
-        ),
-      ) as String);
-
-  @override
-  _i3.EquatableDateTime get createdAt => (super.noSuchMethod(
-        Invocation.getter(#createdAt),
-        returnValue: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#createdAt),
-        ),
-        returnValueForMissingStub: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#createdAt),
-        ),
-      ) as _i3.EquatableDateTime);
-
-  @override
-  String get userId => (super.noSuchMethod(
-        Invocation.getter(#userId),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#userId),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#userId),
-        ),
-      ) as String);
-
-  @override
-  _i3.EquatableDateTime get expire => (super.noSuchMethod(
-        Invocation.getter(#expire),
-        returnValue: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#expire),
-        ),
-        returnValueForMissingStub: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#expire),
-        ),
-      ) as _i3.EquatableDateTime);
-
-  @override
-  String get provider => (super.noSuchMethod(
-        Invocation.getter(#provider),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#provider),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#provider),
-        ),
-      ) as String);
-
-  @override
-  String get providerUid => (super.noSuchMethod(
-        Invocation.getter(#providerUid),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerUid),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerUid),
-        ),
-      ) as String);
-
-  @override
-  String get providerAccessToken => (super.noSuchMethod(
-        Invocation.getter(#providerAccessToken),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerAccessToken),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerAccessToken),
-        ),
-      ) as String);
-
-  @override
-  _i3.EquatableDateTime get providerAccessTokenExpiry => (super.noSuchMethod(
-        Invocation.getter(#providerAccessTokenExpiry),
-        returnValue: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#providerAccessTokenExpiry),
-        ),
-        returnValueForMissingStub: _FakeEquatableDateTime_3(
-          this,
-          Invocation.getter(#providerAccessTokenExpiry),
-        ),
-      ) as _i3.EquatableDateTime);
-
-  @override
-  String get providerRefreshToken => (super.noSuchMethod(
-        Invocation.getter(#providerRefreshToken),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerRefreshToken),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#providerRefreshToken),
-        ),
-      ) as String);
-
-  @override
-  String get ip => (super.noSuchMethod(
-        Invocation.getter(#ip),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#ip),
-        ),
-        returnValueForMissingStub: _i6.dummyValue<String>(
-          this,
-          Invocation.getter(#ip),
-        ),
-      ) as String);
-
-  @override
-  bool get current => (super.noSuchMethod(
-        Invocation.getter(#current),
-        returnValue: false,
-        returnValueForMissingStub: false,
-      ) as bool);
-
-  @override
-  List<Object?> get props => (super.noSuchMethod(
-        Invocation.getter(#props),
-        returnValue: <Object?>[],
-        returnValueForMissingStub: <Object?>[],
-      ) as List<Object?>);
 }

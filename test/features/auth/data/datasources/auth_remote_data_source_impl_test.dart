@@ -103,5 +103,30 @@ void main() {
       }
       resetMockitoState();
     });
+    test('should create a new Account when none is provided', () async {
+      // Arrange
+      final localAuthRemoteDataSource =
+          AuthRemoteDataSourceImpl(client: client);
+
+      when(
+        account.createEmailPasswordSession(
+          email: 'email',
+          password: 'password',
+        ),
+      ).thenAnswer((_) async => Future<Session>.value(mockSession));
+
+      when(mockSession.providerAccessToken).thenReturn('success');
+      // Act
+      try {
+        await localAuthRemoteDataSource.loginWithEmailAndPassword(
+          email: '',
+          password: '',
+        );
+      } catch (e) {
+        // Assert
+        throwsA(ServerException('Please fill in all fields'));
+      }
+      resetMockitoState();
+    });
   });
 }

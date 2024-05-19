@@ -21,6 +21,7 @@ void main() {
       return Session(
         $id: id,
         $createdAt: sessionDate,
+        $updatedAt: sessionDate,
         userId: userId,
         expire: sessionDate,
         provider: provider,
@@ -54,6 +55,7 @@ void main() {
       return SessionEntity(
         id: id,
         createdAt: EquatableDateTime(DateTime.parse(sessionDate)),
+        updatedAt: EquatableDateTime(DateTime.parse(sessionDate)),
         userId: userId,
         expire: EquatableDateTime(DateTime.parse(sessionDate)),
         provider: provider,

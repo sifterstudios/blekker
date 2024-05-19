@@ -51,24 +51,24 @@ void main() {
               .style;
 
       expect(
-        elevatedButtonStyle!.foregroundColor!.resolve(<MaterialState>{}),
+        elevatedButtonStyle!.foregroundColor!.resolve(<WidgetState>{}),
         BlekkerColors.primaryColor,
       );
       expect(
         elevatedButtonStyle.foregroundColor!
-            .resolve(<MaterialState>{MaterialState.pressed}),
+            .resolve(<WidgetState>{WidgetState.pressed}),
         BlekkerColors.primaryContrastColor,
       );
 
       expect(
         elevatedButtonStyle.backgroundColor!
-            .resolve(<MaterialState>{MaterialState.pressed}),
+            .resolve(<WidgetState>{WidgetState.pressed}),
         BlekkerColors.primaryContrastColor,
       );
 
       expect(
         elevatedButtonStyle.textStyle!
-            .resolve(<MaterialState>{MaterialState.pressed})?.color,
+            .resolve(<WidgetState>{WidgetState.pressed})?.color,
         BlekkerColors.secondaryColor,
       );
     });
