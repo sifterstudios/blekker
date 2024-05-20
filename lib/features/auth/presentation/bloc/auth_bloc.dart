@@ -56,12 +56,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     if (storedSession != null) {
       if (isSessionValid(storedSession)) {
         emit(AuthState.loginSuccess(storedSession));
-        print(
-            'Session is present and still valid, returning that instead of contacting appwrite');
         return;
       }
-      print(
-          'Session is present but expired, contacting appwrite to get a new session');
     }
 
     emit(const AuthState.loading());

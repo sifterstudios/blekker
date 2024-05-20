@@ -23,12 +23,33 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  BuildContext? dialogContext;
 
   @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+
+  void _showLoadingDialog(BuildContext context) {
+    showPlatformDialog<PlatformCircularProgressIndicator>(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        dialogContext = context;
+        return Center(
+          child: PlatformCircularProgressIndicator(),
+        );
+      },
+    );
+  }
+
+  void _dismissLoadingDialog() {
+    if (dialogContext != null) {
+      Navigator.of(dialogContext!).pop();
+      dialogContext = null;
+    }
   }
 
   @override
@@ -46,23 +67,20 @@ class _LoginPageState extends State<LoginPage> {
           state.when(
             initial: () {
               // clear circular progress indicator if present
+              _dismissLoadingDialog();
             },
             loading: () {
-              return showPlatformDialog<PlatformCircularProgressIndicator>(
-                context: context,
-                barrierDismissible: true,
-                builder: (context) {
-                  return Center(
-                    child: PlatformCircularProgressIndicator(),
-                  );
-                },
-              );
+              _showLoadingDialog(context);
             },
-            signupSuccess: (UserEntity uid) {},
+            signupSuccess: (UserEntity uid) {
+              _dismissLoadingDialog();
+            },
             loginSuccess: (SessionEntity session) {
+              _dismissLoadingDialog();
               context.go('/loginSuccess');
             },
             failure: (String message) {
+              _dismissLoadingDialog();
               context.go('/login');
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Error: $message')),
