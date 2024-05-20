@@ -1,5 +1,6 @@
 // Copyright 2024 Sifterstudios
 
+import 'package:blekker/features/auth/presentation/pages/home_page.dart';
 import 'package:blekker/features/auth/presentation/pages/login_page.dart';
 import 'package:blekker/features/auth/presentation/pages/signup_page.dart';
 import 'package:equatable/equatable.dart';
@@ -8,6 +9,7 @@ import 'package:go_router/go_router.dart';
 class Routes extends Equatable {
   static const home = '/';
   static const login = '/login';
+  static const homePage = '/loginSuccess';
 
   @override
   List<Object?> get props => [home, login];
@@ -23,6 +25,10 @@ GoRouter router([String? initialLocation]) => GoRouter(
         GoRoute(
           path: Routes.login,
           builder: (_, __) => const LoginPage(),
+        ),
+        GoRoute(
+          path: Routes.homePage,
+          builder: (_, __) => const HomePage(),
         ),
       ],
     );

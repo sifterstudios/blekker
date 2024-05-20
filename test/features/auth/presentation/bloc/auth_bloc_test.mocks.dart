@@ -10,9 +10,12 @@ import 'dart:async' as _i6;
 import 'package:appwrite/models.dart' as _i4;
 import 'package:blekker/app/error/failures.dart' as _i8;
 import 'package:blekker/app/utils/equatable/equatable_date_time.dart' as _i3;
+import 'package:blekker/features/auth/domain/entities/session_entity.dart'
+    as _i12;
 import 'package:blekker/features/auth/domain/entities/user_entity.dart' as _i9;
 import 'package:blekker/features/auth/domain/repository/auth_repository.dart'
     as _i2;
+import 'package:blekker/features/auth/domain/usecases/user_login.dart' as _i11;
 import 'package:blekker/features/auth/domain/usecases/user_sign_up.dart' as _i5;
 import 'package:fpdart/fpdart.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
@@ -106,6 +109,52 @@ class MockUserSignup extends _i1.Mock implements _i5.UserSignup {
           ),
         )),
       ) as _i6.Future<_i7.Either<_i8.Failure, _i9.UserEntity>>);
+}
+
+/// A class which mocks [UserLogin].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUserLogin extends _i1.Mock implements _i11.UserLogin {
+  @override
+  _i2.AuthRepository get authRepository => (super.noSuchMethod(
+        Invocation.getter(#authRepository),
+        returnValue: _FakeAuthRepository_0(
+          this,
+          Invocation.getter(#authRepository),
+        ),
+        returnValueForMissingStub: _FakeAuthRepository_0(
+          this,
+          Invocation.getter(#authRepository),
+        ),
+      ) as _i2.AuthRepository);
+
+  @override
+  _i6.Future<_i7.Either<_i8.Failure, _i12.SessionEntity>> call(
+          _i11.UserLoginParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i6.Future<_i7.Either<_i8.Failure, _i12.SessionEntity>>.value(
+                _i10.dummyValue<_i7.Either<_i8.Failure, _i12.SessionEntity>>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i6.Future<_i7.Either<_i8.Failure, _i12.SessionEntity>>.value(
+                _i10.dummyValue<_i7.Either<_i8.Failure, _i12.SessionEntity>>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i6.Future<_i7.Either<_i8.Failure, _i12.SessionEntity>>);
 }
 
 /// A class which mocks [UserEntity].

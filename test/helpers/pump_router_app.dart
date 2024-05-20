@@ -39,7 +39,7 @@ extension PumpRouterApp on WidgetTester {
     );
 
     await serviceLocator.reset();
-    await initDependencies();
+    await initDependencies(testing: true);
     return pumpWidget(
       MultiBlocProvider(
         providers: [

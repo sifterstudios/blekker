@@ -25,7 +25,7 @@ class AuthRepositoryImpl implements AuthRepository {
       );
       return right(SessionEntity.fromSession(session));
     } on ServerException catch (e) {
-      return left(Failure(e.toString()));
+      return left(Failure(e.message));
     }
   }
 

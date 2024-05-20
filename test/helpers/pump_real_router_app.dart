@@ -17,7 +17,7 @@ extension PumpRealRouterApp on WidgetTester {
     bool isConnected = true,
   }) async {
     await serviceLocator.reset();
-    await initDependencies();
+    await initDependencies(testing: true);
     return pumpWidget(
       MultiBlocProvider(
         providers: [
