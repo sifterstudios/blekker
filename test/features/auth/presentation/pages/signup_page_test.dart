@@ -63,7 +63,6 @@ void main() {
         ),
       );
 
-      // find all AuthField widgets
       final authFields = tester.widgetList<AuthField>(find.byType(AuthField));
       expect(authFields.length, 3);
       for (final field in authFields) {

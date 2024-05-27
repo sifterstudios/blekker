@@ -30,8 +30,6 @@ extension PumpRealRouterApp on WidgetTester {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           routerConfig: router(location),
-          // routeInformationParser: router(location).routeInformationParser,
-          // routerDelegate: router(location).routerDelegate,
         ),
       ),
     );
