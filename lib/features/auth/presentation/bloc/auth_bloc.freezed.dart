@@ -1,5 +1,3 @@
-// Copyright 2024 Sifterstudios 
-
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint

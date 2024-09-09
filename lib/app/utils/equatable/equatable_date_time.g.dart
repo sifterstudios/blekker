@@ -1,5 +1,3 @@
-// Copyright 2024 Sifterstudios
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'equatable_date_time.dart';

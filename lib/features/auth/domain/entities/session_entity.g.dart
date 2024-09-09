@@ -1,5 +1,3 @@
-// Copyright 2024 Sifterstudios
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'session_entity.dart';

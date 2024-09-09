@@ -18,6 +18,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       : _userSignup = userSignup,
         _userLogin = userLogin,
         super(const AuthState.initial()) {
+
+
     on<AuthEvent>((event, emit) async {
       await event.map(
         started: (_) => _onStarted(emit),
