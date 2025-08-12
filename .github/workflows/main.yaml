@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📚 Git Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: 🌎 Create .env files
       uses: SpicyPizza/create-envfile@v2.0
